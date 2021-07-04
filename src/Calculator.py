@@ -1,6 +1,7 @@
 from functions.addition import addition
 from functions.subtraction import subtraction
 from functions.multiplication import multiplication
+from functions.division import division
 
 class Calculator:
     result = 0
@@ -26,7 +27,7 @@ class Calculator:
 
     #div method
     def divide(self, a, b):
-        self.result = a / b
+        self.result = division(a, b)
         return self.result
 
     #sq method
