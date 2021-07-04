@@ -2,6 +2,7 @@ from functions.addition import addition
 from functions.subtraction import subtraction
 from functions.multiplication import multiplication
 from functions.division import division
+from functions.squaring import squaring
 
 class Calculator:
     result = 0
@@ -32,7 +33,7 @@ class Calculator:
 
     #sq method
     def square(self, a):
-        self.result = a * a
+        self.result = squaring(a)
         return self.result
 
     #sq root method
