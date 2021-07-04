@@ -3,6 +3,8 @@ from functions.subtraction import subtraction
 from functions.multiplication import multiplication
 from functions.division import division
 from functions.squaring import squaring
+from functions.square_root import square_root
+
 
 class Calculator:
     result = 0
@@ -38,5 +40,5 @@ class Calculator:
 
     #sq root method
     def sqrt(self, a):
-        self.result = pow(a, 0.5)
+        self.result = square_root(a)
         return self.result
