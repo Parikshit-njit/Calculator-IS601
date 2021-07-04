@@ -1,4 +1,5 @@
 from functions.addition import addition
+from functions.subtraction import subtraction
 
 
 class Calculator:
@@ -15,7 +16,7 @@ class Calculator:
 
     #sub method
     def subtract(self, a, b):
-        self.result = a - b
+        self.result = subtraction(a, b)
         return self.result
 
     #mul method
