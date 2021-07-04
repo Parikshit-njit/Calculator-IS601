@@ -1,3 +1,6 @@
+from functions.addition import addition
+
+
 class Calculator:
     result = 0
 
@@ -7,7 +10,7 @@ class Calculator:
 
     #add method
     def add(self, a, b):
-        self.result = a + b
+        self.result = addition(a, b)
         return self.result
 
     #sub method
