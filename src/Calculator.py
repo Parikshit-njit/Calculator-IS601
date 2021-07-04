@@ -1,6 +1,6 @@
 from functions.addition import addition
 from functions.subtraction import subtraction
-
+from functions.multiplication import multiplication
 
 class Calculator:
     result = 0
@@ -21,7 +21,7 @@ class Calculator:
 
     #mul method
     def multiply(self, a, b):
-        self.result = a * b
+        self.result = multiplication(a, b)
         return self.result
 
     #div method
