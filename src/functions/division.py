@@ -1,3 +1,6 @@
 def division(a, b):
-    c = a / b
-    return c
+    try:
+        c = a / b
+        return c
+    except:
+        print("Division by 0 is not defined!!")
