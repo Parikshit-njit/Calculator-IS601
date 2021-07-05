@@ -51,10 +51,47 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(calculator.divide(int(test_case[1]), int(test_case[0])), float(test_case[2]))
         print(len(test_cases), " test cases passed for Division!")
 
-    def test_results_property(self):
+    def test_results_property_add(self):
         calculator = Calculator()
-        calculator.add(1, 2)
-        self.assertEqual(calculator.result, 3)
+        test_cases = read_csv("src/test/Unit Test Addition.csv")
+        for test_case in test_cases:
+            self.assertEqual(calculator.add(int(test_case[1]), int(test_case[0])), calculator.result)
+        print("Test cases (Addition) static variable :: result passed!")
+
+    def test_results_property_sub(self):
+        calculator = Calculator()
+        test_cases = read_csv("src/test/Unit Test Subtraction.csv")
+        for test_case in test_cases:
+            self.assertEqual(calculator.subtract(int(test_case[1]), int(test_case[0])), calculator.result)
+        print("Test cases (Subtraction) static variable :: result passed!")
+
+    def test_results_property_mul(self):
+        calculator = Calculator()
+        test_cases = read_csv("src/test/Unit Test Multiplication.csv")
+        for test_case in test_cases:
+            self.assertEqual(calculator.multiply(int(test_case[1]), int(test_case[0])), calculator.result)
+        print("Test cases (Multiplication) static variable :: result passed!")
+
+    def test_results_property_div(self):
+        calculator = Calculator()
+        test_cases = read_csv("src/test/Unit Test Division.csv")
+        for test_case in test_cases:
+            self.assertEqual(calculator.divide(int(test_case[1]), int(test_case[0])), calculator.result)
+        print("Test cases (Division) static variable :: result passed!")
+
+    def test_results_property_square(self):
+        calculator = Calculator()
+        test_cases = read_csv("src/test/Unit Test Square.csv")
+        for test_case in test_cases:
+            self.assertEqual(calculator.square(int(test_case[0])), calculator.result)
+        print("Test cases (Squaring) static variable :: result passed!")
+
+    def test_results_property_square_root(self):
+        calculator = Calculator()
+        test_cases = read_csv("src/test/Unit Test Square Root.csv")
+        for test_case in test_cases:
+            self.assertEqual(calculator.sqrt(int(test_case[0])), calculator.result)
+        print("Test cases (Square Root) static variable :: result passed!")
 
 
 if __name__ == '__main__':
