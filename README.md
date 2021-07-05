@@ -6,4 +6,6 @@
 <hr>
 <h3> Screenshot for successful running of test cases </h3>
 
-![test_cases](https://user-images.githubusercontent.com/81203429/124396055-6c6a9080-dcd5-11eb-9a60-a0aeb405346c.png)
+![Screenshot 2021-07-05 at 7 21 45 PM](https://user-images.githubusercontent.com/81203429/124523797-90f26580-ddc6-11eb-8edf-1ecfdb3f0c54.png)
+
+
