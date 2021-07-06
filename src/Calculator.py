@@ -1,9 +1,9 @@
-from functions.addition import addition
-from functions.subtraction import subtraction
-from functions.multiplication import multiplication
-from functions.division import division
-from functions.squaring import squaring
-from functions.square_root import square_root
+from functions.addition import Addition
+from functions.subtraction import Subtraction
+from functions.multiplication import Multiplication
+from functions.division import Division
+from functions.squaring import Squaring
+from functions.square_root import SquareRoot
 
 
 class Calculator:
@@ -15,30 +15,30 @@ class Calculator:
 
     #add method
     def add(self, a, b):
-        self.result = addition(a, b)
+        self.result = Addition.add(a, b)
         return self.result
 
     #sub method
     def subtract(self, a, b):
-        self.result = subtraction(a, b)
+        self.result = Subtraction.sub(a, b)
         return self.result
 
     #mul method
     def multiply(self, a, b):
-        self.result = multiplication(a, b)
+        self.result = Multiplication.mul(a, b)
         return self.result
 
     #div method
     def divide(self, a, b):
-        self.result = division(a, b)
+        self.result = Division.div(a, b)
         return self.result
 
     #sq method
     def square(self, a):
-        self.result = squaring(a)
+        self.result = Squaring.squaring(a)
         return self.result
 
     #sq root method
     def sqrt(self, a):
-        self.result = square_root(a)
+        self.result = SquareRoot.square_root(a)
         return self.result

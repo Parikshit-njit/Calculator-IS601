@@ -1,3 +1,5 @@
-def addition(a, b):
-    c = a + b
-    return c
+class Addition:
+    @staticmethod
+    def add(a, b):
+        c = a + b
+        return c
