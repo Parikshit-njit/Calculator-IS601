@@ -1,4 +1,4 @@
-from src.Calculator import Calculator
+from Calculator.Calculator import Calculator
 
 cal = Calculator()
 
