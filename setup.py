@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-setup(name="Calculator",
+setup(name="calculator",
       version="0.0.1",
       description="It's a calculator",
       author="",
