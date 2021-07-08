@@ -1,6 +1,6 @@
 import statistics as stats
 
 
-def mean(list):
-    c = stats.mean(list)
+def mean(mean_list):
+    c = stats.mean(mean_list)
     return c
