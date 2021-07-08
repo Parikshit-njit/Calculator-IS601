@@ -4,4 +4,4 @@ ADD . .
 
 RUN pip install --upgrade pip
 
-CMD [ "python" , "-m", "unittest", "discover", "-s", "Calculator"]
+CMD [ "python" , "-m", "unittest", "discover", "-s", "calculator"]
