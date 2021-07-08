@@ -1,7 +1,14 @@
-<img src="https://travis-ci.com/Parikshit-njit/Calculator-IS601.svg?branch=main"></img>
-
 # Calculator--IS601
+<div>
+  
+![travis-ci](https://user-images.githubusercontent.com/81203429/124843974-26296180-df61-11eb-83b9-5031923a18c0.png)
+
+  <hr><h3> Build Status </h3> <img src="https://travis-ci.com/Parikshit-njit/Calculator-IS601.svg?branch=main"></img>
+
+</div>
 <p align="justify">
+  <h3>Description</h3>
+  <hr>
   This project is part of <b>IS601</b> course. It is a calculator using Python that has automated unit tests. It performs operations such as addition, subtraction, multiplication, division, square root and square. The unit tests file for specific operation contains 18 tests. This project strictly follows the <b>SOLID</b> principle with a well-thought-out architecture. 
 </p>
 
