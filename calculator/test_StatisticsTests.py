@@ -1,6 +1,7 @@
 import unittest
 from CsvReader.CSVReader import CsvReader
 from Statistics.Statistics import Statistics
+import statistics as stats
 
 
 class MyTestCase(unittest.TestCase):
@@ -11,8 +12,17 @@ class MyTestCase(unittest.TestCase):
         test_cases = CsvReader("TestFiles/Unit Test Mean.csv").data
         for test_case in test_cases:
             data.append(int(test_case['Value']))
-        self.assertEqual(statistics.get_mean(data), statistics.result)
+        self.assertEqual(statistics.get_mean(data), stats.mean(data))
         print("Mean test cases passed!")
+
+    def test_median_result(self):
+        data = []
+        statistics = Statistics()
+        test_cases = CsvReader("TestFiles/Unit Test Median.csv").data
+        for test_case in test_cases:
+            data.append(int(test_case['Value']))
+        self.assertEqual(statistics.get_median(data), stats.median(data))
+        print("Median test cases passed!")
 
     def test_mode_result(self):
         data = []
@@ -20,7 +30,7 @@ class MyTestCase(unittest.TestCase):
         test_cases = CsvReader("TestFiles/Unit Test Mode.csv").data
         for test_case in test_cases:
             data.append(int(test_case['Value']))
-        self.assertEqual(statistics.get_mode(data), statistics.result)
+        self.assertEqual(statistics.get_mode(data), stats.mode(data))
         print("Mode test cases passed!")
 
     def test_variance_result(self):
