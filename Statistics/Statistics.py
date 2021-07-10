@@ -23,4 +23,5 @@ class Statistics(Calculator):
 
     def get_variance(self, data):
         self.result = variance(data)
+        return self.result
 
