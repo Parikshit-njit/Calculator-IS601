@@ -39,7 +39,7 @@ class MyTestCase(unittest.TestCase):
         for test_case in test_cases:
             data.append(int(test_case['Value']))
         self.assertEqual(statistics.get_stdev(data), statistics.result)
-        print("Variance test cases passed!")
+        print("Standard Deviation test cases passed!")
 
 
 if __name__ == '__main__':
