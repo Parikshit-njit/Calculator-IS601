@@ -13,7 +13,7 @@ class MyTestCase(unittest.TestCase):
         test_cases = CsvReader("TestFiles/Unit Test Mean.csv").data
         # for test_case in test_cases:
         #     data.append(int(test_case['Value']))
-        data = RandomsList.generate_randoms(0, 30, 0, 10)
+        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
         print(data)
         self.assertEqual(statistics.get_mean(data), stats.mean(data))
         print("Mean test cases passed!")
@@ -24,7 +24,7 @@ class MyTestCase(unittest.TestCase):
         test_cases = CsvReader("TestFiles/Unit Test Median.csv").data
         # for test_case in test_cases:
         #     data.append(int(test_case['Value']))
-        data = RandomsList.generate_randoms(0, 30, 0, 10)
+        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
         print(data)
         self.assertEqual(statistics.get_median(data), stats.median(data))
         print("Median test cases passed!")
@@ -33,8 +33,10 @@ class MyTestCase(unittest.TestCase):
         data = []
         statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test Mode.csv").data
-        for test_case in test_cases:
-            data.append(int(test_case['Value']))
+        # for test_case in test_cases:
+        #     data.append(int(test_case['Value']))
+        data = RandomsList.generate_randoms(0, 30, 1, 10, True)
+        print(data)
         self.assertEqual(statistics.get_mode(data), stats.mode(data))
         print("Mode test cases passed!")
 
