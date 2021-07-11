@@ -2,6 +2,8 @@ import unittest
 from CsvReader.CSVReader import CsvReader
 from Statistics.Statistics import Statistics
 import statistics as stats
+from RandomGenerator import RandomsList
+
 
 
 class MyTestCase(unittest.TestCase):
@@ -10,8 +12,10 @@ class MyTestCase(unittest.TestCase):
         data = []
         statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test Mean.csv").data
-        for test_case in test_cases:
-            data.append(int(test_case['Value']))
+        # for test_case in test_cases:
+        #     data.append(int(test_case['Value']))
+        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
+        print(data)
         self.assertEqual(statistics.get_mean(data), stats.mean(data))
         print("Mean test cases passed!")
 
@@ -19,8 +23,10 @@ class MyTestCase(unittest.TestCase):
         data = []
         statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test Median.csv").data
-        for test_case in test_cases:
-            data.append(int(test_case['Value']))
+        # for test_case in test_cases:
+        #     data.append(int(test_case['Value']))
+        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
+        print(data)
         self.assertEqual(statistics.get_median(data), stats.median(data))
         print("Median test cases passed!")
 
@@ -28,9 +34,11 @@ class MyTestCase(unittest.TestCase):
         data = []
         statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test Mode.csv").data
-        for test_case in test_cases:
-            data.append(int(test_case['Value']))
-        self.assertEqual(statistics.get_mode(data), stats.mode(data))
+        # for test_case in test_cases:
+        #     data.append(int(test_case['Value']))
+        data = RandomsList.generate_randoms(0, 30, 2, 10, True)
+        print(data.tolist())
+        self.assertTrue(stats.mode(data.tolist()) in statistics.get_mode(data.tolist()))
         print("Mode test cases passed!")
 
     def test_variance_result(self):

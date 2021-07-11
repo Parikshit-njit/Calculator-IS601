@@ -14,5 +14,6 @@ def mode(mode_list):
     d1 = dict(zip(y, L1))
     d2 = {k for (k, v) in d1.items() if v == max(L1)}
 
-    return d2.pop()
+    return d2
+
 
