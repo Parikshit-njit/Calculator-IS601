@@ -1,8 +1,7 @@
 import unittest
-from CsvReader.CSVReader import CsvReader
 from Statistics.Statistics import Statistics
 import statistics as stats
-from RandomGenerator import RandomsList
+from RandomGenerator.RandomInts import RandomsList
 
 
 class MyTestCase(unittest.TestCase):
@@ -23,6 +22,7 @@ class MyTestCase(unittest.TestCase):
     def test_mean_result(self):
         # test_cases = CsvReader("TestFiles/Unit Test Mean.csv").data
         data = RandomsList.generate_randoms(0, 30, 0, 10, False)
+        print(data)
         self.assertEqual(self.statistics.get_mean(data), stats.mean(data))
         print("Mean test cases passed!")
 
