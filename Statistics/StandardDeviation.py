@@ -2,5 +2,8 @@ import statistics as stats
 
 
 def standard_deviation(std_list):
-    c = stats.stdev(std_list)
-    return c
+    try:
+        c = stats.stdev(std_list)
+        return c
+    except (IndexError) or (ValueError):
+        return None

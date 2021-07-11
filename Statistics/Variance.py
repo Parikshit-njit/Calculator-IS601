@@ -2,5 +2,8 @@ import statistics as stats
 
 
 def variance(variance_list):
-    c = stats.variance(variance_list)
-    return c
+    try:
+        c = stats.variance(variance_list)
+        return c
+    except (IndexError) or (ValueError):
+        return None

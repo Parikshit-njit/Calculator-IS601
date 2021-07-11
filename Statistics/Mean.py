@@ -1,3 +1,7 @@
 def mean(mean_list):
-    c = sum(mean_list) / len(mean_list)
-    return c
+    try:
+        c = sum(mean_list) / len(mean_list)
+        return c
+    except (IndexError) or (ValueError):
+        return None
+
