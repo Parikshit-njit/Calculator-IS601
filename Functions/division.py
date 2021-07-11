@@ -4,5 +4,5 @@ class Division:
         try:
             c = a / b
             return c
-        except:
-            print("Division by 0 is not defined!!")
+        except ZeroDivisionError:
+            return None
