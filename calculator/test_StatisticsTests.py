@@ -44,18 +44,22 @@ class MyTestCase(unittest.TestCase):
         data = []
         statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test Variance.csv").data
-        for test_case in test_cases:
-            data.append(int(test_case['Value']))
-        self.assertEqual(statistics.get_variance(data), statistics.result)
+        # for test_case in test_cases:
+        #     data.append(int(test_case['Value']))
+        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
+        print(data)
+        self.assertEqual(statistics.get_variance(data), stats.variance(data))
         print("Variance test cases passed!")
 
     def test_stdev_result(self):
         data = []
         statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test StandardDeviation.csv").data
-        for test_case in test_cases:
-            data.append(int(test_case['Value']))
-        self.assertEqual(statistics.get_stdev(data), statistics.result)
+        # for test_case in test_cases:
+        #     data.append(int(test_case['Value']))
+        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
+        print(data)
+        self.assertEqual(statistics.get_stdev(data), stats.stdev(data))
         print("Standard Deviation test cases passed!")
 
 
