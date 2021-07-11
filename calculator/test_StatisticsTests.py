@@ -11,7 +11,7 @@ class MyTestCase(unittest.TestCase):
         self.statistics = Statistics()
         self.integerRandomDataF = IntRandoms.generate_randoms(0, 30, 0, 10, False)
         self.integerRandomDataT = IntRandoms.generate_randoms(0, 30, 2, 10, True)
-        self.decimalRandomData = DecimalRandoms.generate_randoms(0, 30, 0, 10)
+        self.decimalRandomData = DecimalRandoms.generate_randoms(3, 4, 0, 10, True)
 
     def getUp(self) -> None:
         return self.integerRandomDataF
@@ -38,6 +38,8 @@ class MyTestCase(unittest.TestCase):
         # test_cases = CsvReader("TestFiles/Unit Test Mode.csv").data
         self.assertTrue(stats.mode(self.integerRandomDataT.tolist()) in self.statistics.get_mode(self.integerRandomDataT.tolist()))
         print("Mode test cases for Integer Random List passed!")
+        self.assertTrue(
+            stats.mode(self.decimalRandomData) in self.statistics.get_mode(self.decimalRandomData))
         print("Mode test cases for Decimal Random List passed!")
 
     def test_variance_result(self):
