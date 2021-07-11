@@ -27,32 +27,24 @@ class MyTestCase(unittest.TestCase):
         print("Mean test cases passed!")
 
     def test_median_result(self):
-        data = []
-        statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test Median.csv").data
         data = RandomsList.generate_randoms(0, 30, 0, 10, False)
         self.assertEqual(self.statistics.get_median(data), stats.median(data))
         print("Median test cases passed!")
 
     def test_mode_result(self):
-        data = []
-        statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test Mode.csv").data
         data = RandomsList.generate_randoms(0, 30, 2, 10, True)
         self.assertTrue(stats.mode(data.tolist()) in self.statistics.get_mode(data.tolist()))
         print("Mode test cases passed!")
 
     def test_variance_result(self):
-        data = []
-        statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test Variance.csv").data
         data = RandomsList.generate_randoms(0, 30, 0, 10, False)
         self.assertEqual(self.statistics.get_variance(data), stats.variance(data))
         print("Variance test cases passed!")
 
     def test_stdev_result(self):
-        data = []
-        statistics = Statistics()
         test_cases = CsvReader("TestFiles/Unit Test StandardDeviation.csv").data
         data = RandomsList.generate_randoms(0, 30, 0, 10, False)
         self.assertEqual(self.statistics.get_stdev(data), stats.stdev(data))
