@@ -35,9 +35,9 @@ class MyTestCase(unittest.TestCase):
         test_cases = CsvReader("TestFiles/Unit Test Mode.csv").data
         # for test_case in test_cases:
         #     data.append(int(test_case['Value']))
-        data = RandomsList.generate_randoms(0, 30, 1, 10, True)
-        print(data)
-        self.assertEqual(statistics.get_mode(data), stats.mode(data))
+        data = RandomsList.generate_randoms(0, 30, 2, 10, True)
+        print(data.tolist())
+        self.assertTrue(stats.mode(data.tolist()) in statistics.get_mode(data.tolist()))
         print("Mode test cases passed!")
 
     def test_variance_result(self):
