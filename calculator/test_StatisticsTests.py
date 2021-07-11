@@ -5,7 +5,6 @@ import statistics as stats
 from RandomGenerator import RandomsList
 
 
-
 class MyTestCase(unittest.TestCase):
 
     def test_mean_result(self):
