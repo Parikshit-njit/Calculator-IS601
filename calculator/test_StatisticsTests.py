@@ -1,54 +1,59 @@
 import unittest
 from Statistics.Statistics import Statistics
 import statistics as stats
-from RandomGenerator.RandomInts import RandomsList
+from RandomGenerator.RandomInts import RandomsList as IntRandoms
+from RandomGenerator.RandomDecimals import RandomsList as DecimalRandoms
 
 
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
         self.statistics = Statistics()
-        self.data = []
+        self.integerRandomDataF = IntRandoms.generate_randoms(0, 30, 0, 10, False)
+        self.integerRandomDataT = IntRandoms.generate_randoms(0, 30, 2, 10, True)
+        self.decimalRandomData = DecimalRandoms.generate_randoms(0, 30, 0, 10)
 
     def getUp(self) -> None:
-        return self.data
+        return self.integerRandomDataF
+        return self.integerRandomDataT
+        return self.decimalRandomData
 
     def test_instance(self):
         self.assertIsInstance(self.statistics, Statistics)
 
-    def test_data_property(self):
-        self.assertEqual(self.data, [])
-
     def test_mean_result(self):
         # test_cases = CsvReader("TestFiles/Unit Test Mean.csv").data
-        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
-        print(data)
-        self.assertEqual(self.statistics.get_mean(data), stats.mean(data))
+        self.assertEqual(self.statistics.get_mean(self.integerRandomDataF), stats.mean(self.integerRandomDataF))
+        self.assertEqual(self.statistics.get_mean(self.decimalRandomData), stats.mean(self.decimalRandomData))
         print("Mean test cases passed!")
 
     def test_median_result(self):
         # test_cases = CsvReader("TestFiles/Unit Test Median.csv").data
-        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
-        self.assertEqual(self.statistics.get_median(data), stats.median(data))
-        print("Median test cases passed!")
+        self.assertEqual(self.statistics.get_median(self.integerRandomDataF), stats.median(self.integerRandomDataF))
+        print("Median test cases for Integer Random List passed!")
+        self.assertEqual(self.statistics.get_median(self.decimalRandomData), stats.median(self.decimalRandomData))
+        print("Median test cases for Decimal Random List passed!")
 
     def test_mode_result(self):
         # test_cases = CsvReader("TestFiles/Unit Test Mode.csv").data
-        data = RandomsList.generate_randoms(0, 30, 2, 10, True)
-        self.assertTrue(stats.mode(data.tolist()) in self.statistics.get_mode(data.tolist()))
-        print("Mode test cases passed!")
+        self.assertTrue(stats.mode(self.integerRandomDataT.tolist()) in self.statistics.get_mode(self.integerRandomDataT.tolist()))
+        print("Mode test cases for Integer Random List passed!")
+        self.assertTrue(stats.mode(self.decimalRandomData) in self.statistics.get_mode(self.decimalRandomData))
+        print("Mode test cases for Decimal Random List passed!")
 
     def test_variance_result(self):
         # test_cases = CsvReader("TestFiles/Unit Test Variance.csv").data
-        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
-        self.assertEqual(self.statistics.get_variance(data), stats.variance(data))
-        print("Variance test cases passed!")
+        self.assertEqual(self.statistics.get_variance(self.integerRandomDataF), stats.variance(self.integerRandomDataF))
+        print("Variance test cases for Integer Random List passed!")
+        self.assertEqual(self.statistics.get_variance(self.decimalRandomData), stats.variance(self.decimalRandomData))
+        print("Variance test cases for Decimal Random List passed!")
 
     def test_stdev_result(self):
         # test_cases = CsvReader("TestFiles/Unit Test StandardDeviation.csv").data
-        data = RandomsList.generate_randoms(0, 30, 0, 10, False)
-        self.assertEqual(self.statistics.get_stdev(data), stats.stdev(data))
-        print("Standard Deviation test cases passed!")
+        self.assertEqual(self.statistics.get_stdev(self.integerRandomDataF), stats.stdev(self.integerRandomDataF))
+        print("Standard Deviation test cases for Integer Random List passed!")
+        self.assertEqual(self.statistics.get_stdev(self.decimalRandomData), stats.stdev(self.decimalRandomData))
+        print("Standard Deviation test cases for Decimal Random List passed!")
 
 
 if __name__ == '__main__':
