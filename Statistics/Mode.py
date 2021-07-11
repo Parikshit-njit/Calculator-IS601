@@ -14,6 +14,8 @@ def mode(mode_list):
 
         return d2
     except (IndexError) or (ValueError):
+        # Index Error : throws exception if the list is empty
+        # Value Error : throws exception if the list contains string values
         return None
 
 

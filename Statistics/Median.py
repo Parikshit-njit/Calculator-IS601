@@ -5,4 +5,6 @@ def median(median_list):
         res = (median_list[mid] + median_list[~mid]) / 2
         return res
     except (IndexError) or (ValueError):
+        # Index Error : throws exception if the list is empty
+        # Value Error : throws exception if the list contains string values
         return None
