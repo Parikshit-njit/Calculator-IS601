@@ -1,9 +1,8 @@
 # Calculator--IS601
 <div>
   
-![travis-ci](https://user-images.githubusercontent.com/81203429/124843974-26296180-df61-11eb-83b9-5031923a18c0.png)
 
-  <hr><h3> Build Status </h3> <img src="https://travis-ci.com/Parikshit-njit/Calculator-IS601.svg?branch=main"></img>
+  <h3>Travis Build Status </h3> <img src="https://travis-ci.com/Parikshit-njit/Calculator-IS601.svg?branch=main"></img>
 
 </div>
 <p align="justify">
