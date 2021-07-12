@@ -28,6 +28,14 @@
   </p>
 </div>  
 
+<div>
+  <h3> Program Outline </h3>
+  <hr>
+  <p align="justify">
+   This project demonstrates inheritance by extending the Calculator (calculator/Calculator.py) by Statistics (Statistics/Statistics.py). The functions added to the statistics calculator are mean, median, mode, variance and standard deviation. These functions are imported from Mean.py, Median.py, Mode.py, Variance.py and StandardDeviation.py. In order to test these statistical functions, unit test cases are written in calculator/test_StatisticsTest.py and values for checking them are generated using Random class. 
+  </p>
+</div>  
+
 <hr>
 <h3> Screenshot for successful build through Travis CI</h3>
 
